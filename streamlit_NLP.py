@@ -51,11 +51,8 @@ def load_data(path):
     df_ts = df.set_index('reviewTime')
     return df, df_ts
 
-import os
-st.write("Files in app dir:", os.listdir("."))
-
 # Load data
-DATA_PATH = 'Reviewscopy.csv'  # adjust path
+DATA_PATH = 'sample_reviews.csv'  # adjust path
 df, df_ts = load_data(DATA_PATH)
 
 # Product selection
