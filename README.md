@@ -22,9 +22,14 @@ https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
 - **scikit-learn** for LDA topic modeling  
 - **Matplotlib** for custom plotting  
 
-| Overall Dashboard | Alerts & Topic Modeling |
-|:-----------------:|:-----------------------:|
-| ![Overall](Overall.png) | ![Alerts & Topics](Alerts&Topics.png) |
+## 📸 Screenshots
+
+### Overall Dashboard
+![Overall Dashboard](Overall.png)
+
+### Alerts & Topic Modeling
+![Alerts & Topic Modeling](Alerts&Topics.png)
+
 
 
 ## 🔍 Insights
