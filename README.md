@@ -24,7 +24,7 @@ https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
 
 | Overall Dashboard | Alerts & Topic Modeling |
 |:-----------------:|:-----------------------:|
-| ![Overall](overall_dashboard.png) | ![Alerts & Topics](alerts_topic_modeling.png) |
+| ![Overall](Overall.png) | ![Alerts & Topics](Alerts & Topics.png) |
 
 
 ## 🔍 Insights
