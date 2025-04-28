@@ -52,7 +52,7 @@ def load_data(path):
     return df, df_ts
 
 # Load data
-DATA_PATH = 'Amazon Fine Food Reviews/Reviews copy.csv'  # adjust path
+DATA_PATH = 'Amazon Fine Food Reviews/Reviewscopy.csv'  # adjust path
 df, df_ts = load_data(DATA_PATH)
 
 # Product selection
