@@ -5,7 +5,7 @@
 
 import streamlit as st
 st.set_page_config(
-    page_title="NLP Retail Sentiment Dashboard",
+    page_title="NLP Amazon Food Reviews Sentiment Dashboard",
     page_icon="🛒",
     layout="wide",
     initial_sidebar_state="expanded"
