@@ -69,6 +69,6 @@ https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
 | **Keyword Insights** | Terms like **“fresh”** and **“delicious”** tracked closely with positive spikes, while **“delay”** and **“stale”** aligned with negative dips. |
 | **Actionable Alerts** | The dashboard’s alert system reliably surfaces months where customer sentiment shifts by **≥10%**, enabling timely root-cause analysis. |
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)] https://sentimentmining.streamlit.app/
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sentimentmining.streamlit.app/)
 
 
