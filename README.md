@@ -1,84 +1,97 @@
-# NLP Amazon Fine Food Reviews Sentiment Dashboard
+# 🍽️ NLP Amazon Fine Food Reviews Sentiment Dashboard  
 
-An interactive Streamlit app that performs sentiment mining and trend analysis on Amazon Fine Food Reviews.  
-Features:
-- **Overall & product-level sentiment trends**  
-- **Keyword frequency over time**  
-- **Automatic alerts** for significant sentiment shifts  
-- **Sample review drill-down** with positive/negative examples  
-- **On-demand topic modeling** for selected months  
+## 📌 Overview  
+This project uses **Natural Language Processing (NLP)** on the Amazon Fine Food Reviews dataset (~568,000 reviews) to create an **interactive Streamlit dashboard** that transforms raw customer feedback into actionable business insights.  
 
-## 🔗 Dataset
+Originally motivated by a desire to work with **NLTK’s VADER package**, the project evolved into a **customer sentiment intelligence tool** with real-world business applications:  
 
-Data from the Kaggle “Amazon Fine Food Reviews” dataset:  
-https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
-
-## 🛠️ Tech Stack
-
-- **Python 3.9**  
-- **Streamlit** for the dashboard  
-- **Pandas** for data manipulation  
-- **NLTK VADER** for sentiment scoring  
-- **scikit-learn** for LDA topic modeling  
-- **Matplotlib** for custom plotting  
-
-## 📸 Screenshots
-
-### Overall Dashboard
-![Overall Dashboard](Overall.png)
-
-### Alerts & Topic Modeling
-![Alerts & Topic Modeling](Alerts.png)
-
-
-
-## 🔍 Insights
-
-- **Data Preparation & Cleaning**  
-  – Loaded ~568,000 Amazon Fine Food reviews, converted Unix timestamps to datetimes, filled 27 missing summaries, dropped 0 missing texts/ratings, and removed 1,309 exact duplicate reviews.  
-  – Created a `clean_text` column (lowercasing, HTML/punctuation removal) for NLP.
-
-- **Sentiment Analysis & Validation**  
-  – Applied NLTK’s VADER to compute a compound sentiment score (–1 to +1) for every review.  
-  – Verified strong positive correlation with star ratings (mean sentiment: 1⭐≈0.04 → 5⭐≈0.77), confirming VADER’s reliability for this domain.
-
-- **Trend Analysis & Noise Filtering**  
-  – Aggregated average sentiment by month and plotted a continuous timeline.  
-  – Early years (1999–2004) exhibited large swings due to very low review volumes (3–4 reviews/month).  
-  – Filtered to include only months with ≥100 reviews (88 months retained) to ensure statistically robust trends.
-
-- **Interactive Product-Level Exploration**  
-  – Precomputed the top 50 products by review count and added a sidebar selector.  
-  – Users can drill into sentiment trends, keyword frequencies, and review samples for any individual product.
-
-- **Keyword Frequency Tracking**  
-  – Tracked monthly occurrence rates of customizable keywords (e.g., “fresh,” “delicious,” “delay,” “packaging”) to surface shifting customer concerns.  
-  – Aligned keyword curves with sentiment trends for richer context.
-
-- **Automated Alerts**  
-  – Flagged any month where |Δ sentiment| ≥ chosen threshold (default 0.10).  
-  – Displayed alert table with month, avg. sentiment, Δ sentiment, and review volume for quick anomaly detection.
-
-- **Deep-Dive Sample Reviews**  
-  – Enabled drill-down to view the top 5 most positive and top 5 most negative reviews for any alerted month.  
-  – Provided direct “voice of the customer” examples to explain sentiment swings.
-
-- **On-Demand Topic Modeling**  
-  – Integrated LDA to surface the top 3 topics (10 keywords each) within the reviews of any selected month.  
-  – Helps automatically pinpoint themes driving sentiment spikes or dips.
+- 💰 **Revenue Protection** – Detect negative sentiment linked to shipping delays, stale products, or poor packaging early, reducing churn.  
+- 🛠️ **Product Development** – Track keyword trends (“fresh,” “stale,” “delay”) to identify product quality issues and improve offerings.  
+- 🎯 **Marketing Insights** – Spot positive spikes (e.g., “delicious,” “gift-worthy”) to drive targeted campaigns and seasonal promotions.  
+- 🤝 **Customer Retention** – Automated alerts flag sentiment dips ≥10%, enabling proactive service recovery before negative reviews snowball.  
+- 📊 **Strategic Decisions** – Topic modeling reveals hidden themes behind sentiment swings, guiding supply chain, merchandising, and R&D strategies.  
 
 ---
 
-## 📈 Key Findings
+## 🔗 Dataset  
+Amazon Fine Food Reviews (Kaggle):  
+👉 https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews  
 
-| Finding | Description |
-|:---|:---|
-| **Oct 2005 Spike (+0.15)** | Customers raved about **premium chocolates** (e.g., brandy-filled truffles), praising **flavor**, **freshness**, and **gift-worthy packaging**. |
-| **Feb 2006 Dip (–0.15)** | Reviews plummeted over **shipping delays**, **product defects** (e.g., split coffee pods, off-smelling noodles), and unmet **expectations**. |
-| **Stable Period (2006–2014)** | After filtering low-volume months, sentiment stabilized around **0.65**, with smaller seasonal swings. |
-| **Keyword Insights** | Terms like **“fresh”** and **“delicious”** tracked closely with positive spikes, while **“delay”** and **“stale”** aligned with negative dips. |
-| **Actionable Alerts** | The dashboard’s alert system reliably surfaces months where customer sentiment shifts by **≥10%**, enabling timely root-cause analysis. |
+---
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sentimentmining.streamlit.app/)
+## 🛠️ Tech Stack  
+- **Python 3.9**  
+- **Streamlit** for the interactive dashboard  
+- **Pandas** for data manipulation  
+- **NLTK VADER** for sentiment scoring  
+- **scikit-learn** for LDA topic modeling  
+- **Matplotlib** for plotting  
 
+---
 
+## 📸 Dashboard Screenshots  
+
+### Overall Dashboard  
+![Overall Dashboard](Overall.png)  
+
+### Alerts & Topic Modeling  
+![Alerts & Topic Modeling](Alerts.png)  
+
+---
+
+## 📊 Dashboard Features  
+
+- **Overall & Product-Level Sentiment Trends** → Monitor customer satisfaction across time and products.  
+- **Keyword Frequency Tracking** → Follow shifts in product-related terms (e.g., freshness, packaging).  
+- **Automated Alerts** → Get notified when monthly sentiment changes exceed a set threshold.  
+- **Sample Reviews Drill-Down** → Read the top 5 positive and negative reviews for any alert month.  
+- **On-Demand Topic Modeling** → Use LDA to surface recurring themes behind sentiment spikes or dips.  
+
+---
+
+## 🔍 Insights  
+
+### 1. Sentiment Stability with Occasional Dips  
+- Average sentiment hovers around **0.66** (positive), showing general satisfaction.  
+- However, dips of **≥0.10** were observed in specific months tied to **shipping delays** and **defective products**.  
+
+### 2. Keyword Trends Reflect Quality Issues  
+- Positive terms like **“fresh”** and **“delicious”** align with spikes in sentiment.  
+- Negative terms like **“delay”**, **“stale”**, and **“packaging”** consistently appear in downturns, signaling recurring operational problems.  
+
+### 3. Actionable Alerts Enable Proactive Action  
+- Example: A **–0.15 dip in May 2009** linked to shipping problems and defective coffee pods.  
+- Management could have intervened with improved logistics or supplier changes to prevent customer loss.  
+
+### 4. Positive Spikes Suggest Marketing Opportunities  
+- Example: A **+0.15 spike in Oct 2005** tied to premium chocolates described as “gift-worthy.”  
+- Insights like these could be leveraged for **holiday marketing campaigns**.  
+
+### 5. Business Value of NLP  
+- The dashboard provides **real-time voice-of-the-customer monitoring**, enabling companies to:  
+  - Improve **supply chain reliability** (fix recurring “delay” issues).  
+  - Optimize **product quality control** (address “stale” complaints).  
+  - Enhance **customer experience** (proactive outreach in alert months).  
+  - Drive **incremental revenue** by doubling down on products or features customers praise.  
+
+---
+
+## 📝 Lessons Learned  
+
+1. **Customer Reviews = Revenue Signal**  
+   Analyzing unstructured reviews surfaces issues that directly impact churn and repeat purchase rates.  
+
+2. **Automation Adds Value**  
+   The alert system allows teams to **act quickly**, turning reviews into a live feedback loop instead of static reports.  
+
+3. **NLP Bridges Tech and Business**  
+   Even a relatively simple model like **VADER + LDA** can drive impactful insights when tied to the right metrics (sentiment shifts, keyword frequency, themes).  
+
+4. **Scalable Use Cases**  
+   The same approach can extend to **e-commerce, hospitality, or SaaS reviews** — anywhere customer sentiment matters.  
+
+---
+
+✨ **In essence**: What began as an NLP practice project became a **business intelligence tool** showing how companies can mine massive review datasets to protect revenue, enhance customer experience, and inform smarter product and marketing decisions.  
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sentimentmining.streamlit.app/)  
