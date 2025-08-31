@@ -1,25 +1,25 @@
-# 🍽️ NLP Amazon Fine Food Reviews Sentiment Dashboard  
+# The Voice of the Customer: Sentiment & Trend Analysis on Amazon Food Reviews 
 
-## 📌 Overview  
+## Overview  
 This project uses **Natural Language Processing (NLP)** on the Amazon Fine Food Reviews dataset (~568,000 reviews) to create an **interactive Streamlit dashboard** that transforms raw customer feedback into actionable business insights.  
 
 Originally motivated by a desire to work with **NLTK’s VADER package**, the project evolved into a **customer sentiment intelligence tool** with real-world business applications:  
 
-- 💰 **Revenue Protection** – Detect negative sentiment linked to shipping delays, stale products, or poor packaging early, reducing churn.  
-- 🛠️ **Product Development** – Track keyword trends (“fresh,” “stale,” “delay”) to identify product quality issues and improve offerings.  
-- 🎯 **Marketing Insights** – Spot positive spikes (e.g., “delicious,” “gift-worthy”) to drive targeted campaigns and seasonal promotions.  
-- 🤝 **Customer Retention** – Automated alerts flag sentiment dips ≥10%, enabling proactive service recovery before negative reviews snowball.  
-- 📊 **Strategic Decisions** – Topic modeling reveals hidden themes behind sentiment swings, guiding supply chain, merchandising, and R&D strategies.  
+- **Revenue Protection** – Detect negative sentiment linked to shipping delays, stale products, or poor packaging early, reducing churn.  
+- **Product Development** – Track keyword trends (“fresh,” “stale,” “delay”) to identify product quality issues and improve offerings.  
+- **Marketing Insights** – Spot positive spikes (e.g., “delicious,” “gift-worthy”) to drive targeted campaigns and seasonal promotions.  
+- **Customer Retention** – Automated alerts flag sentiment dips ≥10%, enabling proactive service recovery before negative reviews snowball.  
+- **Strategic Decisions** – Topic modeling reveals hidden themes behind sentiment swings, guiding supply chain, merchandising, and R&D strategies.  
 
 ---
 
-## 🔗 Dataset  
+## Dataset  
 Amazon Fine Food Reviews (Kaggle):  
-👉 https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews  
+https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews  
 
 ---
 
-## 🛠️ Tech Stack  
+## Tech Stack  
 - **Python 3.9**  
 - **Streamlit** for the interactive dashboard  
 - **Pandas** for data manipulation  
@@ -29,7 +29,7 @@ Amazon Fine Food Reviews (Kaggle):
 
 ---
 
-## 📸 Dashboard Screenshots  
+## Dashboard Screenshots  
 
 ### Overall Dashboard  
 ![Overall Dashboard](Overall.png)  
@@ -39,7 +39,7 @@ Amazon Fine Food Reviews (Kaggle):
 
 ---
 
-## 📊 Dashboard Features  
+## Dashboard Features  
 
 - **Overall & Product-Level Sentiment Trends** → Monitor customer satisfaction across time and products.  
 - **Keyword Frequency Tracking** → Follow shifts in product-related terms (e.g., freshness, packaging).  
@@ -49,7 +49,7 @@ Amazon Fine Food Reviews (Kaggle):
 
 ---
 
-## 🔍 Insights  
+## Insights  
 
 ### 1. Sentiment Stability with Occasional Dips  
 - Average sentiment hovers around **0.66** (positive), showing general satisfaction.  
@@ -76,7 +76,7 @@ Amazon Fine Food Reviews (Kaggle):
 
 ---
 
-## 📝 Lessons Learned  
+## Lessons Learned  
 
 1. **Customer Reviews = Revenue Signal**  
    Analyzing unstructured reviews surfaces issues that directly impact churn and repeat purchase rates.  
@@ -92,6 +92,6 @@ Amazon Fine Food Reviews (Kaggle):
 
 ---
 
-✨ **In essence**: What began as an NLP practice project became a **business intelligence tool** showing how companies can mine massive review datasets to protect revenue, enhance customer experience, and inform smarter product and marketing decisions.  
+**In essence**: What began as an NLP practice project became a **business intelligence tool** showing how companies can mine massive review datasets to protect revenue, enhance customer experience, and inform smarter product and marketing decisions.  
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://sentimentmining.streamlit.app/)  
