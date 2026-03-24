@@ -139,6 +139,38 @@
     .tag.purple { background: rgba(232,0,45,.08); border-color: rgba(255,30,30,.22); color: var(--accent2); }
 
     /* ─────────────────────────────
+       PROJECT FILTERS
+    ───────────────────────────── */
+    .project-filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: .82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--font-body);
+      transition: background var(--tr), color var(--tr), border-color var(--tr);
+    }
+    .filter-btn:hover {
+      border-color: var(--border-h);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    /* ─────────────────────────────
        BUTTON
     ───────────────────────────── */
     .btn {
@@ -183,6 +215,9 @@
     .stagger.visible > *:nth-child(3) { transition-delay: .16s; }
     .stagger.visible > *:nth-child(4) { transition-delay: .24s; }
     .stagger.visible > *:nth-child(5) { transition-delay: .32s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: .40s; }
+    .stagger.visible > *:nth-child(7) { transition-delay: .48s; }
+    .stagger.visible > *:nth-child(8) { transition-delay: .56s; }
 
     /* ─────────────────────────────
        NAV
@@ -655,9 +690,12 @@
     }
     .ph-1 { background: linear-gradient(135deg, #0f2847 0%, #1a3a6b 50%, #0d2240 100%); }
     .ph-2 { background: linear-gradient(135deg, #0d2b2b 0%, #153d3d 50%, #0a2020 100%); }
-    .ph-3 { background: linear-gradient(135deg, #1c1040 0%, #2d1b6b 50%, #150c30 100%); }
-    .ph-4 { background: linear-gradient(135deg, #1a0f2b 0%, #3d1f5e 50%, #120a20 100%); }
-    .ph-5 { background: linear-gradient(135deg, #0d1e38 0%, #1a3558 50%, #091528 100%); }
+    .ph-3 { background: linear-gradient(135deg, #0d1e38 0%, #1a3558 50%, #091528 100%); }
+    .ph-4 { background: linear-gradient(135deg, #2a0a0a 0%, #4a1010 50%, #1a0505 100%); }
+    .ph-5 { background: linear-gradient(135deg, #1a0a1a 0%, #3a1030 50%, #120810 100%); }
+    .ph-6 { background: linear-gradient(135deg, #0a1a0a 0%, #1a3a1a 50%, #081208 100%); }
+    .ph-7 { background: linear-gradient(135deg, #1a1a0a 0%, #3a3010 50%, #121008 100%); }
+    .ph-8 { background: linear-gradient(135deg, #0a0a2a 0%, #10103a 50%, #080820 100%); }
     .project-icon {
       font-size: 2.6rem;
       opacity: .55;
@@ -1231,12 +1269,18 @@
       <div class="section-header reveal">
         <div class="section-tag">Projects</div>
         <h2 class="section-title">Selected <span>Work</span></h2>
-        <p class="section-subtitle">End-to-end analytics projects spanning machine learning, data visualization, and NLP.</p>
+        <p class="section-subtitle">Product strategy, growth analytics, and data science projects.</p>
+      </div>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="product">Product</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
       </div>
 
       <div class="projects-grid stagger">
         <!-- Project 1 -->
-        <div class="project-card card">
+        <div class="project-card card" data-category="analytics">
           <div class="project-header ph-1">
             <span class="project-icon">📉</span>
             <div class="project-meta"><span class="tag">Python · SQL</span></div>
@@ -1258,7 +1302,7 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card card">
+        <div class="project-card card" data-category="analytics">
           <div class="project-header ph-2">
             <span class="project-icon">🔮</span>
             <div class="project-meta"><span class="tag">ML · Python</span></div>
@@ -1280,52 +1324,8 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card card">
+        <div class="project-card card" data-category="analytics">
           <div class="project-header ph-3">
-            <span class="project-icon">⚽</span>
-            <div class="project-meta"><span class="tag">Python · EDA</span></div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Erling Haaland's Impact (EPL 2022–23)</h3>
-            <p class="project-desc">Analyzing Haaland's record-breaking debut season using match-level data and Python visualizations — goals, shots, efficiency, and assists across the Premier League.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tag green">Sports Analytics</span>
-                <span class="tag green">Matplotlib</span>
-                <span class="tag green">Seaborn</span>
-              </div>
-              <a href="https://github.com/Viz1303/EDA-of-football-player/tree/main/Erling%20halland%20Python%20Visualisation" target="_blank" rel="noopener" class="project-link">
-                GitHub <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card card">
-          <div class="project-header ph-4">
-            <span class="project-icon">🎸</span>
-            <div class="project-meta"><span class="tag">Tableau</span></div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">The Decline of Rock (Spotify Analysis)</h3>
-            <p class="project-desc">Investigating rock music's decline in the streaming era through a Tableau dashboard analyzing audio features, popularity trends, and release patterns across decades.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tag purple">Tableau</span>
-                <span class="tag purple">Spotify API</span>
-                <span class="tag purple">Dashboard</span>
-              </div>
-              <a href="https://github.com/Viz1303/Spotify-Rock-Music-Analysis-Tableau-Dashboard" target="_blank" rel="noopener" class="project-link">
-                GitHub <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card card">
-          <div class="project-header ph-5">
             <span class="project-icon">🍔</span>
             <div class="project-meta"><span class="tag">NLP · Streamlit</span></div>
           </div>
@@ -1339,6 +1339,116 @@
                 <span class="tag green">Topic Modeling</span>
               </div>
               <a href="https://github.com/Viz1303/Sentiment-Mining-and-Trend-Analysis-of-Amazon-Food-Products-" target="_blank" rel="noopener" class="project-link">
+                GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card card" data-category="product">
+          <div class="project-header ph-4">
+            <span class="project-icon">🛒</span>
+            <div class="project-meta"><span class="tag">Python · Jupyter</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">E-Commerce Checkout Funnel Analysis</h3>
+            <p class="project-desc">End-to-end checkout funnel analysis identifying drop-off points, segment-level behaviour, and PM recommendations with quantified revenue impact estimates.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag green">Funnel Analysis</span>
+                <span class="tag green">Segmentation</span>
+                <span class="tag green">Revenue Impact</span>
+              </div>
+              <a href="https://github.com/Viz1303/Checkout-Funnel-Analysis" target="_blank" rel="noopener" class="project-link">
+                GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card card" data-category="product">
+          <div class="project-header ph-5">
+            <span class="project-icon">🧪</span>
+            <div class="project-meta"><span class="tag">Python · Streamlit</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">A/B Testing Decision Engine — Fintech Loan CTA</h3>
+            <p class="project-desc">End-to-end A/B testing framework for a fintech loan CTA — covering sample size planning, simulation, statistical analysis, and a Go/No-Go business decision framework.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag purple">A/B Testing</span>
+                <span class="tag purple">Statistics</span>
+                <span class="tag purple">Streamlit</span>
+              </div>
+              <a href="https://github.com/Viz1303/AB_Testing_Fintech_CTA" target="_blank" rel="noopener" class="project-link">
+                GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card card" data-category="product">
+          <div class="project-header ph-6">
+            <span class="project-icon">📊</span>
+            <div class="project-meta"><span class="tag">Streamlit · Plotly</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">LendIQ — B2B SaaS Lending Metrics Dashboard</h3>
+            <p class="project-desc">Interactive B2B SaaS lending metrics dashboard built for India Fintech — tracking disbursals, repayments, NPA rates, and cohort-level portfolio health in real time.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag green">Fintech</span>
+                <span class="tag green">Plotly</span>
+                <span class="tag green">KPI Dashboard</span>
+              </div>
+              <a href="https://github.com/Viz1303/LendIQ-Dashboard" target="_blank" rel="noopener" class="project-link">
+                GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card card" data-category="product">
+          <div class="project-header ph-7">
+            <span class="project-icon">🤖</span>
+            <div class="project-meta"><span class="tag">PM · AI Product</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Razorpay AI Dispute Resolver</h3>
+            <p class="project-desc">AI PM portfolio project: full product spec for an AI-powered payment dispute resolution agent on Razorpay's merchant dashboard — PRD, user stories, and success metrics.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag purple">Product Spec</span>
+                <span class="tag purple">AI/ML</span>
+                <span class="tag purple">Fintech</span>
+              </div>
+              <a href="https://github.com/Viz1303/Razorpay_AI_Dispute_Resolver" target="_blank" rel="noopener" class="project-link">
+                GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card card" data-category="product">
+          <div class="project-header ph-8">
+            <span class="project-icon">📱</span>
+            <div class="project-meta"><span class="tag">PM · PRD</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">PhonePe Savings Goals — PRD &amp; UX Teardown</h3>
+            <p class="project-desc">PM portfolio case study: Savings Goals with Round-Up Contributions for PhonePe — includes a full PRD, UX teardown, competitive analysis, and executive summary.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag green">PRD</span>
+                <span class="tag green">UX Research</span>
+                <span class="tag green">Fintech</span>
+              </div>
+              <a href="https://github.com/Viz1303/PhonePe-SavingsGoal-PRD" target="_blank" rel="noopener" class="project-link">
                 GitHub <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -1621,6 +1731,30 @@
       init();
       draw();
       window.addEventListener('resize', () => { resize(); });
+    })();
+  </script>
+
+  <script>
+    // Project filter tabs
+    (function () {
+      const btns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card[data-category]');
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filter = btn.getAttribute('data-filter').toLowerCase();
+          cards.forEach(function (card) {
+            if (filter === 'all' || card.getAttribute('data-category').toLowerCase() === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
     })();
   </script>
 </body>
